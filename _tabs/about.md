@@ -3,6 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
+
 <!-- HTML -->
 <div class="console">
   <header>
@@ -74,10 +75,9 @@ order: 4
 
   .big-text {
     font-size: 2.0em;
-    font-weight: bold; /* Adjust this value to make the text bigger */
+    font-weight: bold;
   }
 
-  /* Irregular flicker effect for old-bulb style */
   @keyframes irregularFlicker {
     0% { opacity: 1; }
     5% { opacity: 0.3; }
@@ -95,7 +95,6 @@ order: 4
     100% { opacity: 1; }
   }
 
-  /* Apply the irregular flicker effect to the links */
   .consolebody a {
     color: var(--chirpy-text-light);
     text-decoration: none;
@@ -108,7 +107,6 @@ order: 4
     text-shadow: 0 0 10px #63de00, 0 0 20px #63de00;
   }
 
-  /* Typewriter caret effect */
   .typing::after {
     content: '|';
     animation: blink 0.7s steps(2, end) infinite;
@@ -147,7 +145,7 @@ order: 4
       padding: 10px;
     }
   }
-  
+
   .secalin {
     font-size: 1.5em;
   }
@@ -161,6 +159,7 @@ order: 4
   }
 </style>
 
+{% raw %}
 <!-- JavaScript -->
 <script>
   const lines = [
@@ -172,39 +171,44 @@ order: 4
 
   const options = [
     "> <span class='secalin11'>Click Below:</span>",
-    "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
+    "> <span class='secalin11'> <a href='/cv-download' target='_blank'>View CV</a></span>",
     "> <span class='secalin11'><a href='/categories/Blogs/'>Blogs</a></span>",
     "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
     "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
     "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
-    "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6hsXGrOBTzG3BqRYibJz0A%3D%3D'>Contact me</a></span>"
+    "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231'>Contact me</a></span>"
   ];
 
   const consoleBody = document.getElementById('consoleBody');
   let lineIndex = 0;
+
+  function scrollToBottom() {
+    consoleBody.scrollTop = consoleBody.scrollHeight;
+  }
 
   function showOptions() {
     options.forEach(option => {
       const p = document.createElement('p');
       p.innerHTML = option;
       consoleBody.appendChild(p);
+      scrollToBottom();
     });
   }
 
   function typeLine() {
     if (lineIndex < lines.length) {
       const p = document.createElement('p');
-      p.innerHTML = lines[lineIndex]; // Use innerHTML to prevent span from showing as text
+      p.innerHTML = lines[lineIndex];
       consoleBody.appendChild(p);
 
       let charIndex = 0;
       const typeChar = () => {
         if (charIndex < lines[lineIndex].length) {
-          // Create a temporary element to get the current text up to charIndex
           const tempText = document.createElement('span');
           tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
-          p.innerHTML = tempText.innerHTML; // Set the innerHTML of p to tempText
+          p.innerHTML = tempText.innerHTML;
           charIndex++;
+          scrollToBottom();
           setTimeout(typeChar, 30);
         } else {
           lineIndex++;
@@ -214,14 +218,20 @@ order: 4
 
       typeChar();
     } else {
-      setTimeout(showOptions, 500);
+      setTimeout(showOptions, 1000);
     }
   }
 
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  prefersDarkScheme.addEventListener("change", (e) => {
+    document.body.style.backgroundColor = e.matches
+      ? "var(--chirpy-bg-dark)"
+      : "var(--chirpy-bg-light)";
+  });
+
   window.onload = typeLine;
 </script>
-
-
+{% endraw %}
 
 
 
