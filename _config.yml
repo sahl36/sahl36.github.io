@@ -9,40 +9,40 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: Asia/Kolkata
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Sahl  # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Security Researcher # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Hi, I’m Sahl, a passionate Cybersecurity Researcher dedicated to exploring the world of information security
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: "https://sahl36.github.io"
 
 github:
-  username: github_username # change to your GitHub username
+  username: sahl36 # change to your GitHub username
 
 twitter:
-  username: twitter_username # change to your Twitter username
+  username: sahl362 # change to your Twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Muhammed Sahl T V M
+  email: sahltosahl36@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    - https://x.com/sahl362 # change to your Twitter homepage
+    - https://github.com/sahl36 # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/muhammed-sahl-473558231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6hsXGrOBTzG3BqRYibJz0A%3D%3D'>Contact me
 
 # Site Verification Settings
 webmaster_verifications:
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: # [light | dark]
+theme_mode:  [dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
@@ -98,7 +98,8 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://res.cloudinary.com/dtayujrgg/image/upload/c_fit,h_512,w_512/z2sakm1gjcj8woerzaqo.jpg
+
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -223,3 +224,4 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
