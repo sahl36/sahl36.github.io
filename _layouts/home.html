@@ -167,61 +167,63 @@ layout: page
 
 <!-- JavaScript -->
 <script>
-  const lines = [
-    "> <span class='big-text'>Hi, I'm Sahl.</span>",
-    "><span class='secalin'> Security researcher.</span>",
-    "><span class='secalin12'> Currently upskilling at Brototype.</span>",
-    "><span class='secalin12'> Passionate about exploring vulnerabilities and enhancing digital security!</span>"
-  ];
+  (function() {
+    const lines = [
+      "> <span class='big-text'>Hi, I'm Sahl.</span>",
+      "><span class='secalin'> Security researcher.</span>",
+      "><span class='secalin12'> Currently upskilling at Brototype.</span>",
+      "><span class='secalin12'> Passionate about exploring vulnerabilities and enhancing digital security!</span>"
+    ];
 
-  const options = [
-    "> <span class='secalin11'>Click Below:</span>",
-    "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
-    "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
-    "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
-    "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
-    "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
-    "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6hsXGrOBTzG3BqRYibJz0A%3D%3D'>Contact me</a></span>"
-  ];
+    const options = [
+      "> <span class='secalin11'>Click Below:</span>",
+      "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
+      "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
+      "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
+      "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
+      "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
+      "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6hsXGrOBTzG3BqRYibJz0A%3D%3D'>Contact me</a></span>"
+    ];
 
-  const consoleBody = document.getElementById('consoleBody');
-  let lineIndex = 0;
+    const consoleBody = document.getElementById('consoleBody');
+    let lineIndex = 0;
 
-  function showOptions() {
-    options.forEach(option => {
-      const p = document.createElement('p');
-      p.innerHTML = option;
-      consoleBody.appendChild(p);
-    });
-  }
-
-  function typeLine() {
-    if (lineIndex < lines.length) {
-      const p = document.createElement('p');
-      p.innerHTML = lines[lineIndex]; // Use innerHTML to prevent span from showing as text
-      consoleBody.appendChild(p);
-
-      let charIndex = 0;
-      const typeChar = () => {
-        if (charIndex < lines[lineIndex].length) {
-          // Create a temporary element to get the current text up to charIndex
-          const tempText = document.createElement('span');
-          tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
-          p.innerHTML = tempText.innerHTML; // Set the innerHTML of p to tempText
-          charIndex++;
-          setTimeout(typeChar, 10);
-        } else {
-          lineIndex++;
-          setTimeout(typeLine, 500);
-        }
-      };
-
-      typeChar();
-    } else {
-      setTimeout(showOptions, 500);
+    function showOptions() {
+      options.forEach(option => {
+        const p = document.createElement('p');
+        p.innerHTML = option;
+        consoleBody.appendChild(p);
+      });
     }
-  }
 
-  window.onload = typeLine;
+    function typeLine() {
+      if (lineIndex < lines.length) {
+        const p = document.createElement('p');
+        p.innerHTML = lines[lineIndex]; // Use innerHTML to prevent span from showing as text
+        consoleBody.appendChild(p);
+
+        let charIndex = 0;
+        const typeChar = () => {
+          if (charIndex < lines[lineIndex].length) {
+            // Create a temporary element to get the current text up to charIndex
+            const tempText = document.createElement('span');
+            tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
+            p.innerHTML = tempText.innerHTML; // Set the innerHTML of p to tempText
+            charIndex++;
+            setTimeout(typeChar, 10);
+          } else {
+            lineIndex++;
+            setTimeout(typeLine, 500);
+          }
+        };
+
+        typeChar();
+      } else {
+        setTimeout(showOptions, 500);
+      }
+    }
+
+    window.onload = typeLine;
+  })();
 </script>
 {% endraw %}
