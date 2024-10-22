@@ -167,7 +167,7 @@ layout: page
 
 <!-- JavaScript -->
 <script>
-  (function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const lines = [
       "> <span class='big-text'>Hi, I'm Sahl.</span>",
       "><span class='secalin'> Security researcher.</span>",
@@ -199,16 +199,15 @@ layout: page
     function typeLine() {
       if (lineIndex < lines.length) {
         const p = document.createElement('p');
-        p.innerHTML = lines[lineIndex]; // Use innerHTML to prevent span from showing as text
+        p.innerHTML = lines[lineIndex];
         consoleBody.appendChild(p);
 
         let charIndex = 0;
         const typeChar = () => {
           if (charIndex < lines[lineIndex].length) {
-            // Create a temporary element to get the current text up to charIndex
             const tempText = document.createElement('span');
             tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
-            p.innerHTML = tempText.innerHTML; // Set the innerHTML of p to tempText
+            p.innerHTML = tempText.innerHTML;
             charIndex++;
             setTimeout(typeChar, 10);
           } else {
@@ -223,7 +222,7 @@ layout: page
       }
     }
 
-    window.onload = typeLine;
-  })();
+    typeLine();
+  });
 </script>
 {% endraw %}
