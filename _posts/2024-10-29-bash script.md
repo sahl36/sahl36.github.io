@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Bash"
-date: 2024-09-11 12:00:00 +0530
+date: 2024-10-29 12:00:00 +0530
 category: [blogs]
 author: "Muhammed Sahl T V M"
 excerpt: "A brief description of your post."
