@@ -1,43 +1,23 @@
 ---
-title: "Certfications"
-date: 2024-09-11 12:00:00 +0530
+title: "Basic bash"
+category: [Certifications]
+date: 2024-10-29 12:00:00 +0530
 author: "Muhammed Sahl T V M"
-excerpt: "A brief description of your post."
+excerpt: "Basic Bash"
 ---
+ **Exciting News!** 
 
-<div style="font-family: 'Courier New', monospace; font-size: 24px; white-space: nowrap; overflow: hidden; width: 100%; max-width: 600px; margin: 50px auto; text-align: center; position: relative;">
+I’m pleased to share that I’ve completed my certification in **Introduction to Bash**! 🎓🚀 
 
-  <span class="typed-text">Hi, I am Sahl, a cybersecurity enthusiast and developer!</span>
-  <span class="cursor">&nbsp;</span>
+In this course, I learned the fundamentals of Bash, including:
 
-  <style>
-    .cursor {
-      display: inline-block;
-      background-color: black;
-      width: 10px;
-      height: 30px;
-      animation: blink 0.6s steps(2, start) infinite;
-    }
+- What Bash is and its significance in the tech world.
+- How to install and set up Bash on various platforms.
+- Writing my first Bash programs to automate tasks and streamline workflows.
 
-    @keyframes blink {
-      0%, 100% { background-color: black; }
-      50% { background-color: transparent; }
-    }
+This knowledge will enhance my scripting skills and contribute to my journey in **cybersecurity** and **automation**.
 
-    .typed-text {
-      display: inline-block;
-      overflow: hidden;
-      border-right: 2px solid black;
-      animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
-    }
+Feel free to connect with me if you're also passionate about scripting or cybersecurity!
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+![Certification](/assets/screenshots/Introduction%20to%20Bash-course-1.png)
 
-    @keyframes blink-caret {
-      50% { border-color: transparent; }
-    }
-  </style>
-</div>
