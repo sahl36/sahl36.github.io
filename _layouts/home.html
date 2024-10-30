@@ -81,35 +81,79 @@ layout: page
     font-weight: bold;
   }
 
-  /* Irregular flicker effect for old-bulb style */
-  @keyframes irregularFlicker {
-    0% { opacity: 1; }
-    5% { opacity: 0.3; }
-    10% { opacity: 0.7; }
-    15% { opacity: 0.1; }
-    25% { opacity: 0.8; }
-    30% { opacity: 0.5; }
-    40% { opacity: 1; }
-    50% { opacity: 0.2; }
-    60% { opacity: 0.9; }
-    70% { opacity: 0.4; }
-    80% { opacity: 1; }
-    85% { opacity: 0.3; }
-    90% { opacity: 0.6; }
-    100% { opacity: 1; }
-  }
-
-  /* Apply the irregular flicker effect to the links */
-  .consolebody a {
-    color: var(--chirpy-text-light);
-    text-decoration: none;
-    animation: irregularFlicker 300ms infinite;
-    transition: color 0.2s, text-shadow 0.2s;
-  }
-
-  .consolebody a:hover {
+  /* Glitch effect styling */
+  .glitch-item {
+    position: relative;
     color: #63de00;
-    text-shadow: 0 0 10px #63de00, 0 0 20px #63de00;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .glitch-item::before,
+  .glitch-item::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: #f00; /* Red for one glitch layer */
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 1.5s infinite linear alternate-reverse;
+  }
+
+  .glitch-item::after {
+    color: #0ff; /* Cyan for another glitch layer */
+    z-index: -1;
+    animation: glitch 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch {
+    0% {
+      clip: rect(10px, 9999px, 50px, 0);
+      transform: skew(0.3deg);
+    }
+    10% {
+      clip: rect(85px, 9999px, 75px, 0);
+      transform: skew(0.3deg);
+    }
+    20% {
+      clip: rect(25px, 9999px, 60px, 0);
+      transform: skew(0.3deg);
+    }
+    30% {
+      clip: rect(60px, 9999px, 85px, 0);
+      transform: skew(0.3deg);
+    }
+    40% {
+      clip: rect(20px, 9999px, 30px, 0);
+      transform: skew(0.3deg);
+    }
+    50% {
+      clip: rect(30px, 9999px, 85px, 0);
+      transform: skew(0.3deg);
+    }
+    60% {
+      clip: rect(65px, 9999px, 35px, 0);
+      transform: skew(0.3deg);
+    }
+    70% {
+      clip: rect(30px, 9999px, 65px, 0);
+      transform: skew(0.3deg);
+    }
+    80% {
+      clip: rect(15px, 9999px, 50px, 0);
+      transform: skew(0.3deg);
+    }
+    90% {
+      clip: rect(85px, 9999px, 20px, 0);
+      transform: skew(0.3deg);
+    }
+    100% {
+      clip: rect(10px, 9999px, 50px, 0);
+      transform: skew(0.3deg);
+    }
   }
 
   /* Typewriter caret effect */
@@ -169,13 +213,14 @@ layout: page
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const lines = [
-      "> <span class='big-text'>Hi, I'm Sahl.</span>",
-      "><span class='secalin'> Security researcher.</span>",
-      "><span class='secalin12'> Currently upskilling at Brototype.</span>",
-      "><span class='secalin12'> Passionate about exploring vulnerabilities and enhancing digital security!</span>"
+      "> <span class='glitch-item' data-text=\"Hi, I'm Sahl.\">Hi, I'm Sahl.</span>",
+      "> <span class='glitch-item secalin' data-text='Security researcher.'>Security researcher.</span>",
+      "> <span class='glitch-item secalin12' data-text='Currently upskilling at Brototype.'>Currently upskilling at Brototype.</span>",
+      "> <span class='glitch-item secalin12' data-text='Passionate about exploring vulnerabilities and enhancing digital security!'>Passionate about exploring vulnerabilities and enhancing digital security!</span>"
     ];
 
     const options = [
+      "<span class='secalin11'>‎ </span>",
       "> <span class='secalin11'>Click Below:</span>",
       "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
       "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
