@@ -2,7 +2,7 @@
 layout: page
 # Index page
 ---
-
+{% raw %}
 <br><br>
 <div class="console">
   <header>
@@ -13,14 +13,10 @@ layout: page
   </div>
 </div>
 
-{% raw %}
-<!-- CSS -->
 <style>
   :root {
-    --chirpy-bg-light: #f8f9fa; /* Light background color */
-    --chirpy-bg-dark: #1a1a1a;  /* Dark background color */
-    --chirpy-text-light: #000;   /* Light text color */
-    --chirpy-text-dark: #63de00; /* Dark text color */
+    --chirpy-bg: #1a1a1a;
+    --chirpy-text: #63de00;
   }
 
   body {
@@ -29,11 +25,11 @@ layout: page
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--chirpy-bg-light);
+    background-color: var(--chirpy-bg);
     transition: background-color 0.3s;
     margin: 0;
     padding: 0 10px;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
 
   .console {
@@ -44,7 +40,7 @@ layout: page
     margin: auto;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevent any extra overflow in the console */
+    overflow: hidden;
   }
 
   .console header {
@@ -65,9 +61,9 @@ layout: page
     flex: 1;
     overflow-y: auto;
     background-color: #000;
-    color: var(--chirpy-text-light);
+    color: var(--chirpy-text);
     transition: color 0.3s;
-    overflow-x: hidden; /* Ensure no horizontal overflow in console body */
+    overflow-x: hidden;
   }
 
   .console .consolebody p {
@@ -76,12 +72,6 @@ layout: page
     line-height: 1.5rem;
   }
 
-  .big-text {
-    font-size: 2.0em;
-    font-weight: bold;
-  }
-
-  /* Glitch effect styling */
   .glitch-item {
     position: relative;
     color: #63de00;
@@ -90,6 +80,15 @@ layout: page
     text-transform: uppercase;
   }
 
+  .slogan {
+    position: relative;
+    color: #63de00;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .slogan.glitch::before,
+  .slogan.glitch::after,
   .glitch-item::before,
   .glitch-item::after {
     content: attr(data-text);
@@ -97,177 +96,181 @@ layout: page
     top: 0;
     left: 0;
     background-color: black;
-    color: #f00; /* Red for one glitch layer */
+    color: #f00;
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: glitch 1.5s infinite linear alternate-reverse;
   }
 
+  .slogan.glitch::after,
   .glitch-item::after {
-    color: #0ff; /* Cyan for another glitch layer */
+    font-size: 1.5em;
+    color: #0ff;
     z-index: -1;
     animation: glitch 2s infinite linear alternate-reverse;
   }
 
   @keyframes glitch {
-    0% {
-      clip: rect(10px, 9999px, 50px, 0);
-      transform: skew(0.3deg);
-    }
-    10% {
-      clip: rect(85px, 9999px, 75px, 0);
-      transform: skew(0.3deg);
-    }
-    20% {
-      clip: rect(25px, 9999px, 60px, 0);
-      transform: skew(0.3deg);
-    }
-    30% {
-      clip: rect(60px, 9999px, 85px, 0);
-      transform: skew(0.3deg);
-    }
-    40% {
-      clip: rect(20px, 9999px, 30px, 0);
-      transform: skew(0.3deg);
-    }
-    50% {
-      clip: rect(30px, 9999px, 85px, 0);
-      transform: skew(0.3deg);
-    }
-    60% {
-      clip: rect(65px, 9999px, 35px, 0);
-      transform: skew(0.3deg);
-    }
-    70% {
-      clip: rect(30px, 9999px, 65px, 0);
-      transform: skew(0.3deg);
-    }
-    80% {
-      clip: rect(15px, 9999px, 50px, 0);
-      transform: skew(0.3deg);
-    }
-    90% {
-      clip: rect(85px, 9999px, 20px, 0);
-      transform: skew(0.3deg);
-    }
-    100% {
-      clip: rect(10px, 9999px, 50px, 0);
-      transform: skew(0.3deg);
-    }
+    0% { clip: rect(10px, 9999px, 50px, 0); transform: skew(0.3deg); }
+    10% { clip: rect(85px, 9999px, 75px, 0); transform: skew(0.3deg); }
+    20% { clip: rect(25px, 9999px, 60px, 0); transform: skew(0.3deg); }
+    30% { clip: rect(60px, 9999px, 85px, 0); transform: skew(0.3deg); }
+    40% { clip: rect(20px, 9999px, 30px, 0); transform: skew(0.3deg); }
+    50% { clip: rect(30px, 9999px, 85px, 0); transform: skew(0.3deg); }
+    60% { clip: rect(65px, 9999px, 35px, 0); transform: skew(0.3deg); }
+    70% { clip: rect(30px, 9999px, 65px, 0); transform: skew(0.3deg); }
+    80% { clip: rect(15px, 9999px, 50px, 0); transform: skew(0.3deg); }
+    90% { clip: rect(85px, 9999px, 20px, 0); transform: skew(0.3deg); }
+    100% { clip: rect(10px, 9999px, 50px, 0); transform: skew(0.3deg); }
   }
 
-  /* Typewriter caret effect */
-  .typing::after {
-    content: '|';
-    animation: blink 0.7s steps(2, end) infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--chirpy-bg-dark);
-    }
-    .console .consolebody {
-      color: var(--chirpy-text-dark);
-    }
-    .consolebody a {
-      color: var(--chirpy-text-dark);
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    .console .consolebody {
-      background-color: #fff;
-      color: var(--chirpy-text-light);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .console {
-      width: 100%;
-      height: auto;
-    }
-    .console .consolebody {
-      padding: 10px;
-    }
-  }
-
-  .secalin {
-    font-size: 1.5em;
-  }
-
-  .secalin11 {
+  .secalin { font-size: 1.5em; }
+  .secalin11 { 
     font-size: 18px;
   }
-
-  .secalin12 {
-    font-size: 18px;
+  .secalin11 a {
+    color: #ffc107;
+    text-decoration: none;
   }
+  .secalin11 a:hover {
+    color: #ff9800;
+  }
+  .secalin12 { font-size: 18px; }
 </style>
 
-<!-- JavaScript -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lines = [
-      "> <span class='glitch-item' data-text=\"Hi, I'm Sahl.\">Hi, I'm Sahl.</span>",
-      "> <span class='glitch-item secalin' data-text='Security researcher.'>Security researcher.</span>",
-      "> <span class='glitch-item secalin12' data-text='Currently upskilling at Brototype.'>Currently upskilling at Brototype.</span>",
-      "> <span class='glitch-item secalin12' data-text='Passionate about exploring vulnerabilities and enhancing digital security!'>Passionate about exploring vulnerabilities and enhancing digital security!</span>"
-    ];
+document.addEventListener('DOMContentLoaded', function () {
+  const slogans = [
+    "MALWARE RESEARCHER",
+    "THREAT ANALYST",
+    "INCIDENT RESPONDER"
+  ];
+  const passionPhrases = [
+    "My Learning Curve – Read My Latest Blogs.",
+    "Securing the digital world with innovation and proactive defense",
 
-    const options = [
-      "<span class='secalin11'>‎ </span>",
-      "> <span class='secalin11'>Click Below:</span>",
-      "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
-      "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
-      "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
-      "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
-      "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
-      "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6hsXGrOBTzG3BqRYibJz0A%3D%3D'>Contact me</a></span>"
-    ];
+  ];
+  
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(){}[]<>.,;:";
+  
+  const lines = [
+    "> <span class='glitch-item' data-text=\"Hi, I'm Sahl.\">Hi, I'm Sahl.</span>",
+    "> <span class='slogan'>SECURITY RESEARCHER</span>",
+    "> <span class='glitch-item secalin' data-text='Currently upskilling at Brototype.'>Currently upskilling at Brototype.</span>",
+    "> <span class='glitch-item secalin12 dynamic-text' '> Passionate about exploring vulnerabilities and enhancing digital security!</span>"
+  ];
 
-    const consoleBody = document.getElementById('consoleBody');
-    let lineIndex = 0;
+  const options = [
+    "<span class='secalin11'>‎ </span>",
+    "> <span class='secalin11'>Click Below:</span>",
+    "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
+    "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
+    "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
+    "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
+    "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
+    "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231'>Contact me</a></span>"
+  ];
 
-    function showOptions() {
-      options.forEach(option => {
-        const p = document.createElement('p');
-        p.innerHTML = option;
-        consoleBody.appendChild(p);
-      });
+  const consoleBody = document.getElementById('consoleBody');
+  let lineIndex = 0;
+  let currentSloganIndex = 0;
+  let currentPassionIndex = 0;
+
+  function updateSlogan() {
+    const sloganElement = consoleBody.querySelector('.slogan');
+    if (sloganElement) {
+      sloganElement.classList.remove('glitch');
+      const slogan = slogans[currentSloganIndex];
+      let charIndex = 0;
+      
+      const scrambleInterval = setInterval(() => {
+        const scrambledText = [...slogan].map((char, index) => 
+          index < charIndex ? char : chars[Math.floor(Math.random() * chars.length)]
+        ).join('');
+        
+        sloganElement.textContent = scrambledText;
+        
+        if (charIndex > slogan.length) {
+          clearInterval(scrambleInterval);
+          sloganElement.classList.add('glitch');
+          sloganElement.dataset.text = slogan;
+          currentSloganIndex = (currentSloganIndex + 1) % slogans.length;
+          setTimeout(updateSlogan, 2000);
+        }
+        charIndex++;
+      }, 15);
     }
+  }
 
-    function typeLine() {
-      if (lineIndex < lines.length) {
-        const p = document.createElement('p');
-        p.innerHTML = lines[lineIndex];
-        consoleBody.appendChild(p);
+  function updatePassionText() {
+    const passionElement = consoleBody.querySelector('.dynamic-text');
+    if (passionElement) {
+      passionElement.classList.remove('glitch');
+      const passion = passionPhrases[currentPassionIndex];
+      let charIndex = 0;
+      
+      const scrambleInterval = setInterval(() => {
+        const scrambledText = [...passion].map((char, index) => 
+          index < charIndex ? char : chars[Math.floor(Math.random() * chars.length)]
+        ).join('');
+        
+        passionElement.textContent = scrambledText;
+        passionElement.dataset.text = scrambledText;
+        
+        if (charIndex > passion.length) {
+          clearInterval(scrambleInterval);
+          passionElement.classList.add('glitch');
+          passionElement.dataset.text = passion;
+          currentPassionIndex = (currentPassionIndex + 1) % passionPhrases.length;
+          setTimeout(updatePassionText, 2000);
+        }
+        charIndex++;
+      }, 15);
+    }
+  }
 
-        let charIndex = 0;
-        const typeChar = () => {
-          if (charIndex < lines[lineIndex].length) {
-            const tempText = document.createElement('span');
-            tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
-            p.innerHTML = tempText.innerHTML;
-            charIndex++;
-            setTimeout(typeChar, 10);
-          } else {
-            lineIndex++;
-            setTimeout(typeLine, 500);
-          }
-        };
+  function showOptions() {
+    options.forEach(option => {
+      const p = document.createElement('p');
+      p.innerHTML = option;
+      consoleBody.appendChild(p);
+    });
+  }
 
-        typeChar();
-      } else {
-        setTimeout(showOptions, 500);
+  function typeLine() {
+    if (lineIndex < lines.length) {
+      const p = document.createElement('p');
+      p.innerHTML = lines[lineIndex];
+      consoleBody.appendChild(p);
+
+      if (lineIndex === 1) {
+        updateSlogan();
       }
-    }
+      if (lineIndex === 3) {
+        updatePassionText();
+      }
 
-    typeLine();
-  });
+      let charIndex = 0;
+      const typeChar = () => {
+        if (charIndex < lines[lineIndex].length) {
+          const tempText = document.createElement('span');
+          tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
+          p.innerHTML = tempText.innerHTML;
+          charIndex++;
+          setTimeout(typeChar, 5);
+        } else {
+          lineIndex++;
+          setTimeout(typeLine, 200);
+        }
+      };
+
+      typeChar();
+    } else {
+      setTimeout(showOptions, 200);
+    }
+  }
+
+  typeLine();
+});
 </script>
 {% endraw %}
