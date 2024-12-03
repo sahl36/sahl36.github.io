@@ -1,2 +1,3 @@
-@import 'dist/bootstrap';
+@use 'dist/bootstrap' as *;
+
 @import 'main';
