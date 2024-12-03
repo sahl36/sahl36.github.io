@@ -1,2 +1,5 @@
-@import 'dist/bootstrap';
+@import 'node_modules/bootstrap/scss/bootstrap'; // Use npm-installed Bootstrap
+// @import 'dist/bootstrap'; // Commented out if not present
+// @import 'main';           // Commented out if not present
+
 @import 'main';
