@@ -1,0 +1,276 @@
+---
+layout: page
+# Index page
+---
+{% raw %}
+<br><br>
+<div class="console">
+  <header>
+    <p>about@sahl</p>
+  </header>
+  <div class="consolebody" id="consoleBody">
+    <p>> </p>
+  </div>
+</div>
+
+<style>
+  :root {
+    --chirpy-bg: #1a1a1a;
+    --chirpy-text: #63de00;
+  }
+
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--chirpy-bg);
+    transition: background-color 0.3s;
+    margin: 0;
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+
+  .console {
+    font-family: 'Fira Mono', monospace;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .console header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #555;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #ddd;
+  }
+
+  .console .consolebody {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #000;
+    color: var(--chirpy-text);
+    transition: color 0.3s;
+    overflow-x: hidden;
+  }
+
+  .console .consolebody p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+  }
+
+  .glitch-item {
+    position: relative;
+    color: #63de00;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .slogan {
+    position: relative;
+    color: #63de00;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .slogan.glitch::before,
+  .slogan.glitch::after,
+  .glitch-item::before,
+  .glitch-item::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: #f00;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 1.5s infinite linear alternate-reverse;
+  }
+
+  .slogan.glitch::after,
+  .glitch-item::after {
+    font-size: 1.5em;
+    color: #0ff;
+    z-index: -1;
+    animation: glitch 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch {
+    0% { clip: rect(10px, 9999px, 50px, 0); transform: skew(0.3deg); }
+    10% { clip: rect(85px, 9999px, 75px, 0); transform: skew(0.3deg); }
+    20% { clip: rect(25px, 9999px, 60px, 0); transform: skew(0.3deg); }
+    30% { clip: rect(60px, 9999px, 85px, 0); transform: skew(0.3deg); }
+    40% { clip: rect(20px, 9999px, 30px, 0); transform: skew(0.3deg); }
+    50% { clip: rect(30px, 9999px, 85px, 0); transform: skew(0.3deg); }
+    60% { clip: rect(65px, 9999px, 35px, 0); transform: skew(0.3deg); }
+    70% { clip: rect(30px, 9999px, 65px, 0); transform: skew(0.3deg); }
+    80% { clip: rect(15px, 9999px, 50px, 0); transform: skew(0.3deg); }
+    90% { clip: rect(85px, 9999px, 20px, 0); transform: skew(0.3deg); }
+    100% { clip: rect(10px, 9999px, 50px, 0); transform: skew(0.3deg); }
+  }
+
+  .secalin { font-size: 1.5em; }
+  .secalin11 { 
+    font-size: 18px;
+  }
+  .secalin11 a {
+    color: #ffc107;
+    text-decoration: none;
+  }
+  .secalin11 a:hover {
+    color: #ff9800;
+  }
+  .secalin12 { font-size: 18px; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slogans = [
+    "MALWARE RESEARCHER",
+    "THREAT ANALYST",
+    "INCIDENT RESPONDER"
+  ];
+  const passionPhrases = [
+    "My Learning Curve – Read My Latest Blogs.",
+    "Securing the digital world with innovation and proactive defense",
+
+  ];
+  
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(){}[]<>.,;:";
+  
+  const lines = [
+    "> <span class='glitch-item' data-text=\"Hi, I'm Sahl.\">Hi, I'm Sahl.</span>",
+    "> <span class='slogan'>SECURITY RESEARCHER</span>",
+    "> <span class='glitch-item secalin' data-text='Currently upskilling at Brototype.'>Currently upskilling at Brototype.</span>",
+    "> <span class='glitch-item secalin12 dynamic-text' '> Passionate about exploring vulnerabilities and enhancing digital security!</span>"
+  ];
+
+  const options = [
+    "<span class='secalin11'>‎ </span>",
+    "> <span class='secalin11'>Click Below:</span>",
+    "> <span class='secalin11'> <a href='/cv-download'>View CV</a></span>",
+    "> <span class='secalin11'><a href='/categories/projects/'>Work</a></span>",
+    "> <span class='secalin11'> <a href='/categories/certifications/'>Certifications</a></span>",
+    "> <span class='secalin11'><a href='/categories/projects/'>Projects</a></span>",
+    "> <span class='secalin11'><a href='/categories/Tools/'>Tools</a></span>",
+    "> <span class='secalin11'><a href='https://www.linkedin.com/in/muhammed-sahl-473558231'>Contact me</a></span>"
+  ];
+
+  const consoleBody = document.getElementById('consoleBody');
+  let lineIndex = 0;
+  let currentSloganIndex = 0;
+  let currentPassionIndex = 0;
+
+  function updateSlogan() {
+    const sloganElement = consoleBody.querySelector('.slogan');
+    if (sloganElement) {
+      sloganElement.classList.remove('glitch');
+      const slogan = slogans[currentSloganIndex];
+      let charIndex = 0;
+      
+      const scrambleInterval = setInterval(() => {
+        const scrambledText = [...slogan].map((char, index) => 
+          index < charIndex ? char : chars[Math.floor(Math.random() * chars.length)]
+        ).join('');
+        
+        sloganElement.textContent = scrambledText;
+        
+        if (charIndex > slogan.length) {
+          clearInterval(scrambleInterval);
+          sloganElement.classList.add('glitch');
+          sloganElement.dataset.text = slogan;
+          currentSloganIndex = (currentSloganIndex + 1) % slogans.length;
+          setTimeout(updateSlogan, 2000);
+        }
+        charIndex++;
+      }, 15);
+    }
+  }
+
+  function updatePassionText() {
+    const passionElement = consoleBody.querySelector('.dynamic-text');
+    if (passionElement) {
+      passionElement.classList.remove('glitch');
+      const passion = passionPhrases[currentPassionIndex];
+      let charIndex = 0;
+      
+      const scrambleInterval = setInterval(() => {
+        const scrambledText = [...passion].map((char, index) => 
+          index < charIndex ? char : chars[Math.floor(Math.random() * chars.length)]
+        ).join('');
+        
+        passionElement.textContent = scrambledText;
+        passionElement.dataset.text = scrambledText;
+        
+        if (charIndex > passion.length) {
+          clearInterval(scrambleInterval);
+          passionElement.classList.add('glitch');
+          passionElement.dataset.text = passion;
+          currentPassionIndex = (currentPassionIndex + 1) % passionPhrases.length;
+          setTimeout(updatePassionText, 2000);
+        }
+        charIndex++;
+      }, 15);
+    }
+  }
+
+  function showOptions() {
+    options.forEach(option => {
+      const p = document.createElement('p');
+      p.innerHTML = option;
+      consoleBody.appendChild(p);
+    });
+  }
+
+  function typeLine() {
+    if (lineIndex < lines.length) {
+      const p = document.createElement('p');
+      p.innerHTML = lines[lineIndex];
+      consoleBody.appendChild(p);
+
+      if (lineIndex === 1) {
+        updateSlogan();
+      }
+      if (lineIndex === 3) {
+        updatePassionText();
+      }
+
+      let charIndex = 0;
+      const typeChar = () => {
+        if (charIndex < lines[lineIndex].length) {
+          const tempText = document.createElement('span');
+          tempText.innerHTML = lines[lineIndex].substring(0, charIndex + 1);
+          p.innerHTML = tempText.innerHTML;
+          charIndex++;
+          setTimeout(typeChar, 5);
+        } else {
+          lineIndex++;
+          setTimeout(typeLine, 200);
+        }
+      };
+
+      typeChar();
+    } else {
+      setTimeout(showOptions, 200);
+    }
+  }
+
+  typeLine();
+});
+</script>
+{% endraw %}
