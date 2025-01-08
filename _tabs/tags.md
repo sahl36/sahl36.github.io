@@ -16,6 +16,11 @@ order: 1
         <h2>
           <a href="{{ post.url }}">{{ post.title }}</a>
         </h2>
+         {% if post.image %}
+          <div class="post-image">
+            <img src="{{ post.image.path }}" alt="{{ post.image.alt }}">
+          </div>
+         {% endif %}
         <div class="post-content"> <!-- Added a div for styling the content -->
           {{ post.content | markdownify }} <!-- Display the full post content -->
         </div>
