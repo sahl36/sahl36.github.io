@@ -40,6 +40,6 @@ This guide is perfect for:
 - **Automate security alerts** for faster **incident detection & response**.  
 - **Boost your career** in **SIEM, SOC, and cybersecurity operations**.  
 
-📖 **Read the full step-by-step guide here:** [https://medium.com/@sahltosahl36/elk-stack-installation-and-configuration-locally-on-linux-82c0c60d8a11](#)  
+📖 **Read the full step-by-step guide here:** [https://medium.com/@sahltosahl36/elk-stack-installation-and-configuration-locally-on-linux-82c0c60d8a11](https://medium.com/@sahltosahl36/elk-stack-installation-and-configuration-locally-on-linux-82c0c60d8a11)  
 
 #ELKStack #CyberSecurity #SIEM #ThreatDetection #Logging #SOC #ThreatHunting #InfoSec #BlueTeam #SecurityMonitoring  
