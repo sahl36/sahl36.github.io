@@ -6,7 +6,7 @@ order: 4
 
 
 <br><br>
-Hi, I'm Sahl, a BCA graduate currently upskilling at Brototype. I have a passion for exploring vulnerabilities and enhancing digital security. My journey in technology is fueled by a deep curiosity and an unwavering desire to learn and adapt in the ever-evolving landscape of cybersecurity.
+Hi, I'm Sahl, a BCA graduate and have a deep passion for cybersecurity, grounded in a strong foundation of IT fundamentals. Currently, I am expanding my skills through hands-on learning on platforms like TryHackMe, LetsDefend, CyberDefenders, Hack The Box, and Security Blue Team. I thrive on exploring vulnerabilities, improving digital security, and approaching each challenge with curiosity and adaptability.
 
 I believe that the world of technology is a dynamic realm where challenges constantly arise, and I am committed to staying at the forefront of these changes. My dedication to understanding the intricacies of cybersecurity drives me to dive into complex problems, analyze potential risks, and develop innovative solutions that can truly make a difference.
 
